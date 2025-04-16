@@ -1,0 +1,22 @@
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: aliceblue;
+    padding: 20px;
+}
+.item{
+    background: green;
+    color: white;
+    padding: 20px;
+    flex: 1 0 100px ; /*grow, shrink, basis*/
+    text-align: center;
+    border-radius: 8px;
+}
+.especial{
+    align-self: flex-start;
+    background: orange;
+}

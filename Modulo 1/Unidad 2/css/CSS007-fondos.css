@@ -1,0 +1,11 @@
+.fondo {
+    color: white;
+    background-image: url("Six-Days-in-Fallujah-rog-ally-game-settings.webp"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    opacity: 0.9;
+    padding: 500px;
+    text-align: center;
+    font-size: 20px;
+}

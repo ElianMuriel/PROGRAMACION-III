@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Mi primer Formulario</title>
+    </head>
+    <body>
+        <form action="https://www.google.com.ec" method="GET">
+            <table>
+                <tr>
+                    <td>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="name" name="Nombre" placeholder="Su Nombre">
+                    </td>
+                    <td>
+                        <label for="nombre">Apellido</label>
+                        <input type="text" id="apellido" name="Apellido" placeholder="Su Apellido">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="nombre">Provincia</label>
+                        <select id="provincia" name="provincia">
+                            <option value="pic">Pichincha</option>
+                            <option value="cot">Cotopaxi</option>
+                            <option value="gua">Guayas</option>
+                            <option value="oro">El Oro</option>
+                        </select>
+                    </td>
+                    <td>
+                        <legend>Ubicación</legend>
+                        <label for="nombre">Dirección</label>
+                        <textarea type="text" id="apellido" name="direccion" placeholder="Su Direccion" rows="5" cols="20">
+                        </textarea>
+                    </td>
+                    <td>
+                        <label for="nombre">Colores</label>
+                        <select id="colores" name="colores" multiple>
+                            <option value="4">Azul</option>
+                            <option value="3">Verde</option>
+                            <option value="2">Marron</option>
+                            <option value="1">Negro</option>
+                        </select>
+                    </td>
+                    <tr>
+                        <td>
+                            <label for="navegadores">Navegadores</label>
+                            <input type="range" id="a" name="a">
+                        </td>
+                        <td>
+                            <label for="nombre">Edad</label>
+                            <input type="number" id="femenino" name="femenino">
+                        </td>
+                        <td>
+                            <label for="nombre">Colores</label>
+                            <select id="colores" name="colores" multiple>
+                                <option value="4">Azul</option>
+                                <option value="3">Verde</option>
+                                <option value="2">Marron</option>
+                                <option value="1">Negro</option>
+                            </select>
+                        </td>
+                </tr>
+            </table>
+            <button type="submit">Enviar</button>
+        </form>
+    </body>
+</html>
