@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Bodega</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <div class="fondo">
+        <img src="https://shipex.cl/wp-content/uploads/2021/03/bodega-despacho-shipex.png" width="300" height="300">
+        <header>
+            <h1>Gestión de Bodega</h1>
+            <p>Administre su bodega con eficiencia y facilidad.</p>
+        </header>
+
+        <section>
+            <ol>
+                <li>Características principales</li>
+                <li>Gestión de productos</li>
+                <li>Control de inventario</li>
+                <li>Reportes de ventas</li>
+                <li>Configuración avanzada</li>
+            </ol>
+
+            <h3>Solicitar asistencia</h3>
+
+            <form>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido">
+
+                <label for="correo">Correo</label>
+                <input type="text" id="correo" name="correo" placeholder="Ingrese su Correo Electrónico">
+
+                <h4>¿Qué tipo de asistencia necesita?</h4>
+                <input type="checkbox" name="pagina_web" id="pagina_web">Página web<br>
+                <input type="checkbox" name="soporte_tecnico" id="soporte_tecnico">Soporte Técnico<br>
+                <input type="checkbox" name="asistencia_personal" id="asistencia_personal">Asistencia Personal<br>
+
+                <button type="submit">Enviar Solicitud</button>
+            </form>
+
+            <div class="container">
+                <h1>Horarios de Atención</h1>
+                <table id="calendario_atencion">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Hora</th>
+                            <th>Tipo de Asistencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lunes - Miércoles</td>
+                            <td>08:00 a 17:00</td>
+                            <td>Página Web - Soporte Técnico - Asistencia Personal</td>
+                        </tr>
+                        <tr>
+                            <td>Jueves - Viernes</td>
+                            <td>09:00 a 18:00</td>
+                            <td>Página Web - Soporte Técnico - Asistencia Personal</td>
+                        </tr>
+                        <tr>
+                            <td>Sábado - Feriados</td>
+                            <td>08:00 a 12:00</td>
+                            <td>Página Web - Soporte Técnico</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <a href="https://www.google.com" title="Google">Salir a Google</a>
+            <p>
+                <i><b>Nuestro compromiso</b> es que pueda llevar a cabo sus tareas con <u>facilidad,
+                optimizando su tiempo y agilizando las acciones de gestión.</u></i>
+            </p>
+        </section>
+    </div>
+</body>
+</html>
