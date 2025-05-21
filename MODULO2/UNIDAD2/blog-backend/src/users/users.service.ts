@@ -1,4 +1,5 @@
-import { Injectable } from '@nestjs/common';
+import { paginate, IPaginationOptions, Pagination } from 'nestjs-typeorm-paginate';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
@@ -22,12 +23,15 @@ export class UsersService {
     return this.userRepository.save(user);
   }
 
-  findAll() {
-    return this.userRepository.find();
+  async findAll(options: IPaginationOptions): Promise<Pagination<User>> {
+    const queryBuilder = this.userRepository.createQueryBuilder('user');
+    return paginate<User>(queryBuilder, options);
   }
 
-  findOne(id: string) {
-    return this.userRepository.findOne({ where: { id } });
+  async findOne(id: string) {
+    const user = await this.userRepository.findOne({ where: { id } });
+    if (!user) throw new NotFoundException('User not found');
+    return user;
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {

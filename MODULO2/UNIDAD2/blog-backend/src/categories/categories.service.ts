@@ -1,3 +1,4 @@
+import { paginate, IPaginationOptions, Pagination } from 'nestjs-typeorm-paginate';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -17,8 +18,9 @@ export class CategoriesService {
     return this.categoryRepository.save(category);
   }
 
-  findAll() {
-    return this.categoryRepository.find();
+  async findAll(options: IPaginationOptions): Promise<Pagination<Category>> {
+    const queryBuilder = this.categoryRepository.createQueryBuilder('category');
+    return paginate<Category>(queryBuilder, options);
   }
 
   findOne(id: string) {

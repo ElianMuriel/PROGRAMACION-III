@@ -1,7 +1,9 @@
-import { Controller, Post as HttpPost, Body, Get, Param, Put, Delete } from '@nestjs/common';
+import { Controller, Post as HttpPost, Body, Get, Param, Put, Delete, Query } from '@nestjs/common';
 import { PostsService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
+import { Pagination } from 'nestjs-typeorm-paginate';
+import { Post } from './post.entity';
 
 @Controller('posts')
 export class PostsController {
@@ -13,8 +15,12 @@ export class PostsController {
   }
 
   @Get()
-  findAll() {
-    return this.postsService.findAll();
+  findAll(
+    @Query('page') page = 1,
+    @Query('limit') limit = 10,
+  ): Promise<Pagination<Post>> {
+    limit = limit > 100 ? 100 : limit;
+    return this.postsService.findAll({ page, limit });
   }
 
   @Get(':id')

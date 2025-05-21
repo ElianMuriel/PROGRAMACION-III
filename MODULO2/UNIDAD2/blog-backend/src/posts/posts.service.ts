@@ -1,3 +1,4 @@
+import { paginate, IPaginationOptions, Pagination } from 'nestjs-typeorm-paginate';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -28,8 +29,10 @@ export class PostsService {
     return this.postRepository.save(post);
   }
 
-  findAll() {
-    return this.postRepository.find({ relations: ['category'] });
+  async findAll(options: IPaginationOptions): Promise<Pagination<Post>> {
+    const queryBuilder = this.postRepository.createQueryBuilder('post');
+    queryBuilder.leftJoinAndSelect('post.category', 'category');
+    return paginate<Post>(queryBuilder, options);
   }
 
   findOne(id: string) {
