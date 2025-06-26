@@ -1,0 +1,15 @@
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASS=postgres
+DB_NAME=programacion
+JWT_SECRET=supersecret
+JWT_EXPIRES_IN=3600s
+
+MAIL_USER=elianmuriel47@gmail.com
+MAIL_USER=htbqstneiolcxyoi
+
+SENDGRID_API_KEY=SG.xxxxx
+SENDGRID_SENDER=elianmuriel47@gmail.com
+
+MONGO_URI=mongodb://localhost:27017
